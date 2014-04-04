@@ -1,0 +1,88 @@
+#!/system/bin/sh
+################################################################
+# ------------------------------------------------------------ #
+# |                        Pure Tweaks                       | #
+# ------------------------------------------------------------ #
+################################################################
+# _MarcoMarinho_@xda
+# DeveDroid & ArjunrambZ 
+# have in mind that lines that start with "#" are comments
+
+STL=`ls -d /sys/block/stl*`;
+BML=`ls -d /sys/block/bml*`;
+MMC=`ls -d /sys/block/mmc*`;
+ZRM=`ls -d /sys/block/zram*`;
+MTD=`ls -d /sys/block/mtd*`;
+RAM=`ls -d /sys/block/ram*`;
+LP=`ls -d /sys/block/loop*`;
+fi;
+
+# ------------------------------------------------------------ #
+# |            Remount all partitions with noatime           | #
+# ------------------------------------------------------------ #
+
+busybox mount -o remount,noatime,nodiratime,remount,rw,barrier=0,data=writeback /data;
+busybox mount -o remount,noatime,nodiratime,remount,rw,barrier=0,data=writeback /cache;
+busybox mount -o remount,noatime,nodiratime /dev;
+busybox mount -o remount,noatime,nodiratime /proc;
+busybox mount -o remount,noatime,nodiratime /sys;
+busybox mount -o remount,noatime,nodiratime /system;
+
+# ------------------------------------------------------------ #
+# |                       Flag Tweaks                        | #
+# ------------------------------------------------------------ #
+  
+MMC=`ls -d /sys/block/mmc*`;
+for q in $MMC; do
+	echo "0" > $q/queue/rotational;
+	echo "1" > $q/queue/iosched/fifo_batch;
+	echo "1" > $q/queue/iosched/low_latency;
+	echo "1" > $q/queue/iosched/back_seek_penalty;
+	echo "1000000000" > $q/queue/iosched/back_seek_max;
+	echo "3" > $q/queue/iosched/slice_idle; 
+	echo "16" > $q/queue/iosched/quantum
+	echo "512" > $q/queue/nr_requests;
+	done
+
+echo "2048" > /sys/devices/virtual/bdi/179:0/read_ahead_kb; 
+
+# ------------------------------------------------------------ #
+# |                 Anti Bootloop Tweaks                     | #
+# ------------------------------------------------------------ #
+
+chmod 644 /system/framework/framework-res.apk;
+chmod 644 /system/app/SystemUI.apk;
+chmod 644 /system/framework/framework.jar
+
+# ------------------------------------------------------------ #
+# |             disable iostats to reduce overhead           | #
+# ------------------------------------------------------------ #
+
+	if [ -e $i/queue/iostats ];
+	then
+		echo "0" > $i/queue/iostats;
+	fi;
+	
+	
+# Optimize for read- & write-throughput; 
+# Optimize for readahead; 
+	if [ -e $i/queue/read_ahead_kb ];
+	then
+		echo "512" >  $i/queue/read_ahead_kb;
+	fi;
+done;
+
+# ------------------------------------------------------------ #
+# |                    Touch Screen Tweaks                   | #
+# ------------------------------------------------------------ #
+
+# Touch sensitivity
+echo 7035 > /sys/class/touch/switch/set_touchscreen;
+echo 8002 > /sys/class/touch/switch/set_touchscreen;
+echo 11000 > /sys/class/touch/switch/set_touchscreen;
+echo 13060 > /sys/class/touch/switch/set_touchscreen;
+echo 14005 > /sys/class/touch/switch/set_touchscreen;
+
+done;
+
+# END OF TWEAKS

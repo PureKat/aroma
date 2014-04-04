@@ -1,0 +1,24 @@
+#!/system/bin/sh
+################################################################
+# ------------------------------------------------------------ #
+# |                        Pure Tweaks                       | #
+# ------------------------------------------------------------ #
+################################################################
+# Disable HTC loggers on HTC devices
+    target=`getprop ro.product.manufacturer`
+    case "$target" in "HTC")
+    # Disable HTC Checkin Service
+        setprop ro.config.htc.nocheckin 1
+    # Turn off sending device crash log data to HTC
+        setprop profiler.force_disable_err_rpt 1
+    # Disable HTC CrashReport service
+        setprop persist.htc.checkin.errorreport 0
+    ;;
+    esac
+
+# Disable Sending Usage Data
+    setprop ro.config.nocheckin 1
+
+# Disable Kernel Error Checking
+    setprop ro.kernel.android.checkjni 0
+

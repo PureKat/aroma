@@ -1,0 +1,23 @@
+#!/system/bin/sh
+################################################################
+# ------------------------------------------------------------ #
+# |                        Pure Tweaks                       | #
+# ------------------------------------------------------------ #
+################################################################
+# Kernel tweaks for MSN7x30 devices (HTC Desire Z)
+    target=`getprop ro.board.platform`
+    case "$target" in "msm7x30")
+        echo "conservative" > /sys/devices/system/cpu/cpu0/cpufreq/scaling_governor
+        echo "300000" > /sys/devices/system/cpu/cpu0/cpufreq/conservative/sampling_rate
+        echo "90" > /sys/devices/system/cpu/cpu0/cpufreq/conservative/up_threshold
+        echo "ondemand" > /sys/devices/system/cpu/cpu0/cpufreq/scaling_governor
+        echo "20000" > /sys/devices/system/cpu/cpu0/cpufreq/ondemand/sampling_rate
+        echo "1" > /sys/devices/system/cpu/cpufreq/ondemand/io_is_busy
+        echo "10" > /sys/devices/system/cpu/cpufreq/ondemand/sampling_down_factor
+        echo "60" > /sys/devices/system/cpu/cpu0/cpufreq/ondemand/up_threshold
+        echo "30" > /sys/devices/system/cpu/cpufreq/ondemand/down_differential
+        echo "vr" > /sys/block/mmcblk0/queue/scheduler
+        echo "vr" > /sys/block/mmcblk1/queue/scheduler
+    ;;
+    esac
+

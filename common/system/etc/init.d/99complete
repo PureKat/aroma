@@ -1,0 +1,21 @@
+#!/system/bin/sh
+################################################################
+# ------------------------------------------------------------ #
+# |                        Pure Tweaks                       | #
+# ------------------------------------------------------------ #
+################################################################
+# Make sure all init.d scripts have proper permissions
+    sysrw
+    # First for each script
+    busybox chown -Rv 0:2000 /system/etc/init.d
+    busybox chmod -Rv 0755 /system/etc/init.d
+    # Set root:root for init.d folder
+    busybox chown -v 0:0 /system/etc/init.d
+    sysro
+
+# Execute /system/etc/sysctl.conf
+    sysctl -p
+
+# Almost done, now time to sync
+    sync;
+
