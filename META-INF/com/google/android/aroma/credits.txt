@@ -1,12 +1,16 @@
 
 <b>Special thanks to:</b>
 
-flar2 for:
-- module to disable system R/W protection
+Andromadus Team for:
+- HTC Desire Z Trees
+
+mike1986. for:
+- Some tweaks and AROMA Installer idea
 
 rovo89 for:
 - Xposed Framework
 
-langer hans for:
-- Sense 5 Toolbox
+stopa46 for:
+- PureKat design
+
 
