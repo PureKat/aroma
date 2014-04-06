@@ -9,6 +9,8 @@ Description
 TODO
 ---
 * Add Kernels Section
+* Add Regional GPSConf Section
+* Add Audio Sound Section
 
 Contributors
 ---
