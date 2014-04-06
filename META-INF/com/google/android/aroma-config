@@ -138,6 +138,25 @@ checkbox(
 );
 
 ###################################################################################################################
+# SELECT BLOATWARE
+
+checkbox(
+  "Bloatware",
+  "Select apps you want to delete:",
+  "@apps",
+  "bloatware.prop",
+
+  "Apollo","CyanogenMod Music App",0,
+  "Browser","AOSP Default Browser",0,
+  "CMAccount","CyanogenMod Account Set-Up",0,
+  "CMFile Manager","CyanogenMod File Manager",0,
+  "Email","Non-Gmail Account Set-Up",0,
+  "Live Wallpapers","All live wallpapers related apps",0,
+  "VideoEditor","Edit your videos",0,
+  "WhispherPush","Secure Messaging Integration",0
+);
+
+###################################################################################################################
 # INSTALLING
 
 ini_set("text_next", "Install now");

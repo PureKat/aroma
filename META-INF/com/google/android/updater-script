@@ -171,6 +171,56 @@ ui_print(">>> Installing Bytecode Verification disabler");
 	run_program("/tmp/dalvik.sh");
 	endif;
 
+# Options for Bloatware
+
+	if file_getprop("/tmp/aroma-data/bloatware.prop","item.0.1") == "1" then
+ui_print(">>> Removing Apollo");
+	delete("/system/app/Apollo.apk");
+	endif;
+
+	if file_getprop("/tmp/aroma-data/bloatware.prop","item.0.2") == "1" then
+ui_print(">>> Removing Browser");
+	delete("/system/app/Browser.apk");
+	endif;
+
+	if file_getprop("/tmp/aroma-data/bloatware.prop","item.0.3") == "1" then
+ui_print(">>> Removing CMAccount");
+	delete("/system/app/CMAccount.apk");
+	endif;
+
+	if file_getprop("/tmp/aroma-data/bloatware.prop","item.0.4") == "1" then
+ui_print(">>> Removing CMFileManger");
+	delete("/system/app/CMFileManager.apk");
+	endif;
+
+	if file_getprop("/tmp/aroma-data/bloatware.prop","item.0.5") == "1" then
+ui_print(">>> Removing Email");
+	delete("/system/app/Email.apk");
+	delete("/system/app/Exchange2.apk");
+	endif;
+
+	if file_getprop("/tmp/aroma-data/bloatware.prop","item.0.6") == "1" then
+ui_print(">>> Removing Live Wallpapers");
+	delete("/system/app/BasicDreams.apk");
+        delete("/system/app/Galaxy4.apk");
+	delete("/system/app/HoloSpiralWallpaper.apk");
+	delete("/system/app/LiveWallpapers.apk");
+	delete("/system/app/MagicSmokeWallpapers.apk");
+	delete("/system/app/NoiseField.apk");
+	delete("/system/app/PhaseBeam.apk");
+	delete("/system/app/VisualizationWallpapers.apk");
+	endif;
+
+	if file_getprop("/tmp/aroma-data/bloatware.prop","item.0.7") == "1" then
+ui_print(">>> Removing Video Editor");
+	delete("/system/app/VideoEditor.apk");
+	endif;
+
+	if file_getprop("/tmp/aroma-data/bloatware.prop","item.0.8") == "1" then
+ui_print(">>> Removing WhispherPush");
+	delete("/system/app/WhisperPush.apk");
+	endif;
+
 ########## END OF AROMA ##########
 
 ui_print(">>> Creating toolbox symlinks");
