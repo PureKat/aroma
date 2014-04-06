@@ -14,8 +14,9 @@ Contributors
 ---
 * amarullz
 * mike1986.
-* PA Team
 * BaNkS
+* tung91
+* rayford85
 
 ---
 CREATED BY MARCOMARINHO 
