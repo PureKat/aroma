@@ -8,7 +8,7 @@ Description
 
 TODO
 ---
-* Finish Themes Section
+* Add Kernels Section
 
 Contributors
 ---
