@@ -158,7 +158,6 @@ ui_print(">>> Installing Seeder");
 	package_extract_dir("common/aroma/tweaks/seeder", "/data");
 	endif;
 
-#	if file_getprop("/tmp/aroma-data/tweaks.prop","item.0.4") == "1" && file_getprop("/tmp/aroma-data/enhancements.prop","item.0.1") != "1" then
 	if file_getprop("/tmp/aroma-data/tweaks.prop","item.0.4") == "1" then
 ui_print(">>> Installing Xposed");
 	package_extract_dir("common/aroma/tweaks/xposed", "/data/app");
@@ -169,6 +168,40 @@ ui_print(">>> Installing Bytecode Verification disabler");
 	package_extract_file("common/aroma/tweaks/dalvik/dalvik.sh", "/tmp/dalvik.sh");
 	set_perm(0, 0, 0777, "/tmp/dalvik.sh");
 	run_program("/tmp/dalvik.sh");
+	endif;
+
+# Options for Themes
+
+	if file_getprop("/tmp/aroma-data/themes.prop","selected.0") == "1" then
+ui_print(">>> Installing Flats Theme");
+	package_extract_file("common/aroma/themes/flats/Flats.apk", "/data/Flats.apk");
+	package_extract_file("common/aroma/themes/flats/theme.sh", "/tmp/theme.sh");
+	set_perm(0, 0, 0777, "/tmp/theme.sh");
+	run_program("/tmp/theme.sh");
+	endif;
+
+	if file_getprop("/tmp/aroma-data/themes.prop","selected.0") == "2" then
+ui_print(">>> Installing Holo Sense Theme");
+	package_extract_file("common/aroma/themes/holo/HoloSense.apk", "/data/HoloSense.apk");
+	package_extract_file("common/aroma/themes/holo/theme.sh", "/tmp/theme.sh");
+	set_perm(0, 0, 0777, "/tmp/theme.sh");
+	run_program("/tmp/theme.sh");
+	endif;
+
+	if file_getprop("/tmp/aroma-data/themes.prop","selected.0") == "3" then
+ui_print(">>> Installing Holo Sense Light Theme");
+	package_extract_file("common/aroma/themes/hololight/HoloSenseLight.apk", "/data/HoloSenseLight.apk");
+	package_extract_file("common/aroma/themes/hololight/theme.sh", "/tmp/theme.sh");
+	set_perm(0, 0, 0777, "/tmp/theme.sh");
+	run_program("/tmp/theme.sh");
+	endif;
+
+	if file_getprop("/tmp/aroma-data/themes.prop","selected.0") == "4" then
+ui_print(">>> Installing Mianogen Theme");
+	package_extract_file("common/aroma/themes/mianogen/Mianogen.apk", "/data/Mianogen.apk");
+	package_extract_file("common/aroma/themes/mianogen/theme.sh", "/tmp/theme.sh");
+	set_perm(0, 0, 0777, "/tmp/theme.sh");
+	run_program("/tmp/theme.sh");
 	endif;
 
 # Options for Bloatware
