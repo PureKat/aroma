@@ -8,8 +8,7 @@ Description
 
 TODO
 ---
-* Change to Sliding Explorer
-* Add GApps Core
+* Finish Themes Section
 
 Contributors
 ---
