@@ -108,31 +108,36 @@ ui_print(">>> Installing Google Drive");
 # Options for Custom Applications
 
 	if file_getprop("/tmp/aroma-data/capps.prop","item.0.1") == "1" then
+ui_print(">>> Installing Clean Master");
+	package_extract_dir("common/aroma/capps/clean", "/data/app");
+	endif;
+
+	if file_getprop("/tmp/aroma-data/capps.prop","item.0.2") == "1" then
 ui_print(">>> Installing Dropbox");
 	package_extract_dir("common/aroma/capps/dropbox", "/data/app");
 	endif;
 
-	if file_getprop("/tmp/aroma-data/capps.prop","item.0.2") == "1" then
+	if file_getprop("/tmp/aroma-data/capps.prop","item.0.3") == "1" then
 ui_print(">>> Installing Sliding Explorer");
 	package_extract_dir("common/aroma/capps/explorer", "/data/app");
 	endif;
 
-	if file_getprop("/tmp/aroma-data/capps.prop","item.0.3") == "1" then
+	if file_getprop("/tmp/aroma-data/capps.prop","item.0.4") == "1" then
 ui_print(">>> Installing Facebook");
 	package_extract_dir("common/aroma/capps/facebook", "/data/app");
 	endif;
 
-	if file_getprop("/tmp/aroma-data/capps.prop","item.0.4") == "1" then
+	if file_getprop("/tmp/aroma-data/capps.prop","item.0.5") == "1" then
 ui_print(">>> Installing Adobe Flash Player");
 	package_extract_dir("common/aroma/capps/flash/4.0", "/data/app");
 	endif;
 
-	if file_getprop("/tmp/aroma-data/capps.prop","item.0.5") == "1" then
+	if file_getprop("/tmp/aroma-data/capps.prop","item.0.6") == "1" then
 ui_print(">>> Installing Adobe Reader");
 	package_extract_dir("common/aroma/capps/reader", "/data/app");
 	endif;
 
-	if file_getprop("/tmp/aroma-data/capps.prop","item.0.6") == "1" then
+	if file_getprop("/tmp/aroma-data/capps.prop","item.0.7") == "1" then
 ui_print(">>> Installing Twitter");
 	package_extract_dir("common/aroma/capps/twitter", "/data/app");
 	endif;
