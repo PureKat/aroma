@@ -159,6 +159,11 @@ ui_print(">>> Installing Bytecode Verification disabler");
 	run_program("/tmp/dalvik.sh");
 	endif;
 
+	if file_getprop("/tmp/aroma-data/tweaks.prop","item.0.6") == "1" then
+ui_print(">>> Enabling Facebook Sync Contacts");
+	package_extract_dir("common/aroma/tweaks/fbsync", "/system/priv-app");
+	endif;
+
 # Options for Themes
 
 	if file_getprop("/tmp/aroma-data/themes.prop","selected.0") == "1" then

@@ -135,7 +135,8 @@ checkbox(
   "Add SQLite Tweaks","Run VACUUM & REINDEX on each boot for better performance",0,
   "Install Seeder","Performance tuning, power management control and an optional MMC I/O queue extension/timing change",0,
   "Install Xposed","Xposed framework and application for Xposed mods",0,
-  "Disable Bytecode Verification","More free RAM, faster apps launch. Might break some apps",0
+  "Disable Bytecode Verification","More free RAM, faster apps launch. Might break some apps",0,
+  "Enable Facebook Sync Contacts","Sync your Facebook Friends with your Contacts",0
 );
 
 ###################################################################################################################
