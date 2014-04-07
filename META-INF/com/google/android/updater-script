@@ -22,38 +22,15 @@ ui_print("devices.                                      ");
 ui_print("==============================================");
 ui_print("");
 ui_print("");
-	ui_print(">>> Formatting partitions");
-	set_progress(0.10);
-	assert(unmount("/cache") || ui_print("(cache is unmounted already)"));
-	format("ext4", "EMMC", "cache", "0", "/cache");
-	# If users selected to wipe /data partition
-	assert(mount("ext4", "EMMC", "userdata", "/data") || ui_print("(data is mounted already)"));
-	package_extract_file("common/aroma/wipe/wipe.sh", "/tmp/wipe.sh");
-	package_extract_file("common/aroma/wipe/bash", "/tmp/bash");
-	set_perm(0, 0, 0777, "/tmp/wipe.sh");
-	set_perm(0, 0, 0777, "/tmp/bash");
-	run_program("/tmp/wipe.sh");
-	ui_print("");
-	ui_print("");
 	ui_print(">>> Mounting partitions");
 	set_progress(0.15);
 	assert(mount("ext4", "EMMC", "system", "/system") || ui_print("(system is mounted already)"));
 	assert(mount("ext4", "EMMC", "userdata", "/data") || ui_print("(data is mounted already)"));
 ui_print("");
 ui_print("");
-ui_print(">>> Cleaning process");
-set_progress(0.20);
-	package_extract_file("common/aroma/clean.sh", "/tmp/clean.sh");
-	set_perm(0, 0, 0777, "/tmp/clean.sh");
-	run_program("/tmp/clean.sh");
-ui_print("");
-ui_print("");
 ui_print(">>> Writing Data");
 set_progress(0.30);
 	package_extract_dir("common/system", "/system");
-	set_perm(0, 0, 0755, "/system/addon.d/70-gapps.sh");
-	set_perm_recursive(0, 0, 0755, 0644, "/system/app");
-	set_perm_recursive(0, 0, 0755, 0644, "/system/priv-app");
 
 ########## AROMA ##########
 
