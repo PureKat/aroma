@@ -150,6 +150,7 @@ selectbox(
   "Flats","Stock based theme with Flat UI System",0,
   "Holo Sense","Mix of Sense/Stock Android and some modern flat on top",0,
   "Holo Sense Light","Holo Sense Theme with Holo Light Settings",0,
+  "KitKatify","Replace all blue resources, all white",1,
   "Mianogen","Mix of CM/MIUI with Classy UI touch",0
 );
 

@@ -24,20 +24,20 @@ rm -Rf /data/data/eu.chainfire.supersu.pro
 
 # Remove /data/app - /data/app doubled applications
 	## GAPPS
-	#rm /data/app/com.android.chrome*.apk
-	#rm /data/app/com.google.android.apps.maps*.apk
-	#rm /data/app/com.google.android.street*.apk
-	#rm /data/app/com.google.android.music*.apk
-	#rm /data/app/com.google.android.apps.plus*.apk
-	#rm /data/app/com.google.android.googlequicksearchbox*.apk
-	#rm /data/app/com.google.android.youtube*.apk
+	rm /data/app/com.android.chrome*.apk
+	rm /data/app/com.google.android.apps.maps*.apk
+	rm /data/app/com.google.android.street*.apk
+	rm /data/app/com.google.android.music*.apk
+	rm /data/app/com.google.android.apps.plus*.apk
+	rm /data/app/com.google.android.googlequicksearchbox*.apk
+	rm /data/app/com.google.android.youtube*.apk
 
 	## CAPPS
-	#rm /data/app/com.dropbox.android*.apk
-	#rm /data/app/com.estrongs.android.pop*.apk
-	#rm /data/app/com.facebook.katana*.apk
-	#rm /data/app/com.adobe.flashplayer*.apk
-	#rm /data/app/com.adobe.reader*.apk
-	#rm /data/app/com.twitter.android*.apk
+	rm /data/app/com.dropbox.android*.apk
+	rm /data/app/com.ballerapps.slidingexplorer*.apk
+	rm /data/app/com.facebook.katana*.apk
+	rm /data/app/com.adobe.flashplayer*.apk
+	rm /data/app/com.adobe.reader*.apk
+	rm /data/app/com.twitter.android*.apk
 
 # End of the cleaning script
