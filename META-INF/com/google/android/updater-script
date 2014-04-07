@@ -161,6 +161,7 @@ ui_print(">>> Installing Bytecode Verification disabler");
 
 	if file_getprop("/tmp/aroma-data/tweaks.prop","item.0.6") == "1" then
 ui_print(">>> Enabling Facebook Sync Contacts");
+	delete("/system/priv-app/ContactsProvider.apk");
 	package_extract_dir("common/aroma/tweaks/fbsync", "/system/priv-app");
 	endif;
 
