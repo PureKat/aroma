@@ -3,7 +3,7 @@ AROMA Installer | GApps &amp; Tweaks
 Description
 ---
 * An Aroma Installer for PureKat ROM
-* This wasn't tested yet. Please don't test it or you can get bootloop
+* This was special made for Desire Z, I will make it universal soon ...
 
 
 TODO
